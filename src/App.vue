@@ -35,19 +35,25 @@
     </v-app-bar>
 
     <v-main>
+      <v-container>
+        <router-view></router-view>
+      </v-container>
       <HelloWorld/>
     </v-main>
+     <v-footer app>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld';
 
+
 export default {
   name: 'App',
 
   components: {
-    HelloWorld,
+    HelloWorld
   },
 
   data: () => ({
