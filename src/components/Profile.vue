@@ -56,6 +56,18 @@
           <h4>{{}}</h4>
         </div>
 
+        <div>
+          <h3>City</h3>
+          <!--  vet -->
+          <h4>{{}}</h4>
+        </div>
+
+        <div>
+          <h3>Experience Years</h3>
+          <!--  vet -->
+          <h4>{{}}</h4>
+        </div>
+
       </div>
 
       <v-btn class="btn-edit" color="primary"> Edit <span class="material-icons"></span> </v-btn>
