@@ -1,12 +1,14 @@
 <template>
-  
-  <v-card class="cont">
-    <v-card-title>PROFILE</v-card-title>
+  <v-app>
+    <side-menu-vet :drawer="drawer"></side-menu-vet>
+    <v-app-bar fixed app color="primary" light clipped-left class="elevation-2">
+      <v-app-bar-nav-icon class="white--text" @click="toggleDrawer"></v-app-bar-nav-icon>
+      <v-toolbar-title class="white--text"><img src="../images/logo.png" alt="logo" width="170" height="60"></v-toolbar-title>
+    </v-app-bar>
+    <v-card class="cont">
       <div class="img-profile">
-        <img class="img-user" src="../assets/vet.png">
+        <img class="img-user" src="https://papelmatic.com/wp-content/uploads/2019/09/papelmatic-higiene-profesional-limpieza-desinfeccion-clinicas-veterinarias-1080x675.jpg">
       </div>
-
-
       <div class="data">
         <div>
           <h3>Firstname</h3>
@@ -73,15 +75,27 @@
       <v-btn class="btn-edit" color="primary"> Edit <span class="material-icons"></span> </v-btn>
     
   </v-card>
-
-  
+    <veterinaries-list class="mt-10"></veterinaries-list>
+  </v-app>
 </template>
 
-
-
 <script>
+import VeterinariesList from "./veterinaries-list";
+import SideMenuVet from "./side-menu-vet";
+
 export default {
-  name: 'Profile'
+  name: 'vet-profile',
+  components: {SideMenuVet, VeterinariesList},
+  data(){
+    return{
+      drawer: false,
+    }
+  },
+  methods:{
+    toggleDrawer() {
+      this.drawer = !this.drawer;
+    },
+  }
 }
 </script>
 

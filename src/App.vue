@@ -1,63 +1,30 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <!--Poner Logo de Pet -->
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-        <v-toolbar-items>
-        <v-btn text to="/profile">Profile</v-btn>
-      </v-toolbar-items>
-        <!--
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />-->
-      </div> 
-
-      <v-spacer></v-spacer>
-
-     
-    </v-app-bar>
-
-    <v-main>
-      <v-container>
-        <router-view></router-view>
-      </v-container>
-      <HelloWorld/>
-    </v-main>
-     <v-footer app>
-    </v-footer>
-  </v-app>
+  <div id="app">
+    <div id="nav">
+    </div>
+    <router-view/>
+  </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld';
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
+#nav {
+  padding: 30px;
 
-export default {
-  name: 'App',
+  a {
+    font-weight: bold;
+    color: #2c3e50;
 
-  components: {
-    HelloWorld
-  },
-
-  data: () => ({
-    //
-  }),
-};
-</script>
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
+</style>
